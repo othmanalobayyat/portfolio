@@ -44,5 +44,5 @@ export const skills: Record<string, string[]> = {
 export const contact = {
   email: "alobayyat.othman@gmail.com",
   github: "https://github.com/othmanalobayyat",
-  linkedin: "https://linkedin.com/in/othman-alobayyat",
+  linkedin: "www.linkedin.com/in/othman-al-obayyat-51a383268",
 };
