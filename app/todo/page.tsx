@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   Download,
-  ArrowLeft,
   CalendarDays,
   Trophy,
   TrendingUp,
@@ -158,15 +157,11 @@ export default function TodoPage() {
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0F1117] to-transparent" />
         </div>
 
-        {/* Nav row — integrated into the hero, bathed in the same atmosphere */}
+        {/* Nav row */}
         <div className="relative mx-auto mb-14 flex max-w-5xl items-center justify-between lg:mb-20">
-          <a
-            href="/"
-            className="inline-flex items-center gap-1.5 text-sm text-zinc-500 transition-colors hover:text-zinc-300"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Portfolio
-          </a>
+          <span className="text-sm text-zinc-600">
+            Built by Othman Alobayyat
+          </span>
           <div className="inline-flex items-center gap-2 rounded-full border border-zinc-700/50 bg-[#13141F]/80 px-3 py-1 text-xs text-zinc-400">
             <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(52,211,153,0.7)]" />
             v1.0.0
@@ -499,24 +494,10 @@ export default function TodoPage() {
             </span>
             <span className="hidden text-zinc-700 sm:inline">·</span>
             <span className="hidden text-xs text-zinc-500 sm:inline">
-              Built by{" "}
-              <a
-                href="/"
-                className="text-zinc-400 transition-colors hover:text-zinc-200"
-              >
-                Othman Alobayyat
-              </a>
+              Built by Othman Alobayyat
             </span>
           </div>
-          <div className="flex items-center gap-4">
-            <a
-              href="/"
-              className="text-xs text-zinc-500 transition-colors hover:text-zinc-300"
-            >
-              Portfolio →
-            </a>
-            <span className="text-xs text-zinc-600">© 2025</span>
-          </div>
+          <span className="text-xs text-zinc-600">© 2025</span>
         </div>
       </footer>
     </div>
