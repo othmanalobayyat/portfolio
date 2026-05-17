@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Download,
   ArrowLeft,
@@ -17,6 +18,14 @@ import {
 
 const WEB_URL = "https://todo-productivity-app-gamma.vercel.app/Welcome";
 const APK_URL = "/apks/todo.apk";
+
+// ─── Screenshot paths — drop files into public/screenshots/todo/ ──────────────
+
+const screenshots = {
+  tasks:        "/screenshots/todo/tasks.png",
+  calendar:     "/screenshots/todo/calendar.png",
+  achievements: "/screenshots/todo/achievements.png",
+};
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
@@ -77,218 +86,27 @@ const techStack = [
   "Resend",
 ];
 
-// ─── Phone screens ────────────────────────────────────────────────────────────
-
-function TasksScreen() {
-  const tasks = [
-    { done: false, priority: "high", w: "60px" },
-    { done: false, priority: "none", w: "80px" },
-    { done: true, priority: "none", w: "55px" },
-    { done: false, priority: "high", w: "70px" },
-    { done: true, priority: "none", w: "50px" },
-    { done: false, priority: "medium", w: "75px" },
-  ];
-
-  return (
-    <div className="bg-[#080810] p-4 pb-8">
-      <div className="mb-4">
-        <p className="text-[9px] font-medium uppercase tracking-widest text-zinc-600">
-          Today · May 17
-        </p>
-        <p className="mt-0.5 text-[13px] font-bold text-white">My Tasks</p>
-        <div className="mt-2 flex items-center gap-2">
-          <div className="h-1 flex-1 overflow-hidden rounded-full bg-zinc-800">
-            <div className="h-full w-[40%] rounded-full bg-indigo-500" />
-          </div>
-          <span className="text-[9px] font-medium text-zinc-600">3 / 7</span>
-        </div>
-      </div>
-
-      <div className="space-y-2.5">
-        {tasks.map((task, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <div
-              className={`h-3.5 w-3.5 shrink-0 rounded border ${
-                task.done
-                  ? "border-indigo-500/50 bg-indigo-500/20"
-                  : "border-zinc-700"
-              }`}
-            />
-            <div
-              className={`h-[7px] rounded-full ${
-                task.done ? "bg-zinc-800" : "bg-zinc-500"
-              }`}
-              style={{ width: task.w }}
-            />
-            {task.priority === "high" && (
-              <div className="ml-auto h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-            )}
-            {task.priority === "medium" && (
-              <div className="ml-auto h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* FAB */}
-      <div className="mt-5 flex justify-end">
-        <div className="relative flex h-7 w-7 items-center justify-center rounded-full bg-indigo-600 shadow-[0_0_12px_rgba(99,102,241,0.6)]">
-          <div className="h-px w-3 bg-white" />
-          <div className="absolute h-3 w-px bg-white" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function StreakScreen() {
-  const badges = [
-    { active: true, color: "bg-amber-500" },
-    { active: true, color: "bg-indigo-500" },
-    { active: true, color: "bg-emerald-500" },
-    { active: false, color: "" },
-    { active: false, color: "" },
-    { active: false, color: "" },
-    { active: false, color: "" },
-    { active: false, color: "" },
-  ];
-
-  return (
-    <div className="bg-[#080810] p-4 pb-8">
-      <p className="mb-3 text-[13px] font-bold text-white">Activity</p>
-
-      <div className="mb-3 rounded-xl border border-amber-900/30 bg-gradient-to-br from-amber-950/40 to-orange-950/20 p-3">
-        <p className="text-[9px] font-medium uppercase tracking-widest text-amber-700">
-          Current Streak
-        </p>
-        <div className="mt-1 flex items-end gap-1.5">
-          <span className="text-[28px] font-bold leading-none text-amber-400">
-            12
-          </span>
-          <span className="mb-1 text-[10px] text-amber-700">days</span>
-        </div>
-        <div className="mt-2.5 h-1 overflow-hidden rounded-full bg-amber-900/30">
-          <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-amber-500 to-orange-400" />
-        </div>
-        <p className="mt-1 text-[8px] text-amber-800">8 days to next badge</p>
-      </div>
-
-      <p className="mb-2 text-[9px] font-medium uppercase tracking-widest text-zinc-600">
-        Badges
-      </p>
-      <div className="grid grid-cols-4 gap-1.5">
-        {badges.map((b, i) => (
-          <div
-            key={i}
-            className={`aspect-square rounded-lg ${
-              b.active
-                ? b.color + " shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
-                : "border border-zinc-800 bg-zinc-900/60"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function CalendarScreen() {
-  const taskColors = [
-    { color: "bg-indigo-500", width: "80%" },
-    { color: "bg-amber-500", width: "60%" },
-    { color: "bg-emerald-500", width: "70%" },
-  ];
-  const hasDotDays = [3, 7, 10, 14, 17, 21, 24, 28];
-
-  return (
-    <div className="bg-[#080810] p-4 pb-8">
-      <p className="mb-2.5 text-[13px] font-bold text-white">Schedule</p>
-
-      <div className="mb-1.5 flex items-center justify-between">
-        <span className="text-[10px] font-semibold text-zinc-400">May 2025</span>
-        <div className="flex gap-0.5">
-          <div className="h-3 w-3 rounded border border-zinc-800" />
-          <div className="h-3 w-3 rounded border border-zinc-800" />
-        </div>
-      </div>
-
-      <div className="mb-1 grid grid-cols-7 gap-0.5">
-        {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (
-          <div key={i} className="text-center text-[7px] font-medium text-zinc-700">
-            {d}
-          </div>
-        ))}
-      </div>
-
-      <div className="mb-3 grid grid-cols-7 gap-0.5">
-        {Array.from({ length: 35 }).map((_, i) => {
-          const day = i - 2;
-          const inMonth = day >= 1 && day <= 31;
-          const isToday = day === 17;
-          const hasDot = hasDotDays.includes(day) && inMonth && !isToday;
-          return (
-            <div
-              key={i}
-              className={`flex flex-col items-center rounded py-0.5 ${
-                isToday ? "bg-indigo-600" : ""
-              }`}
-            >
-              <span
-                className={`text-[8px] ${
-                  !inMonth
-                    ? "text-zinc-800"
-                    : isToday
-                    ? "font-bold text-white"
-                    : "text-zinc-500"
-                }`}
-              >
-                {inMonth ? day : ""}
-              </span>
-              {hasDot && (
-                <div className="mt-0.5 h-0.5 w-0.5 rounded-full bg-indigo-500" />
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      <p className="mb-1.5 text-[9px] font-medium uppercase tracking-widest text-zinc-600">
-        Today
-      </p>
-      <div className="space-y-1.5">
-        {taskColors.map((t, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-2 rounded-md bg-zinc-900/60 px-2 py-1.5"
-          >
-            <div className={`h-3 w-0.5 shrink-0 rounded-full ${t.color}`} />
-            <div
-              className="h-[7px] rounded-full bg-zinc-600"
-              style={{ width: t.width }}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// ─── Phone frame ──────────────────────────────────────────────────────────────
-
-type ScreenType = "tasks" | "streak" | "calendar";
+// ─── Phone frame with real screenshot ────────────────────────────────────────
 
 function PhoneMockup({
-  type,
+  src,
+  alt,
   className = "",
+  imageHeight = 320,
+  priority = false,
 }: {
-  type: ScreenType;
+  src: string;
+  alt: string;
   className?: string;
+  /** Pixel height of the visible screenshot area. Increase for taller phones. */
+  imageHeight?: number;
+  priority?: boolean;
 }) {
   return (
     <div
       className={`overflow-hidden rounded-[30px] border border-zinc-700/50 bg-zinc-900 shadow-[0_24px_60px_rgba(0,0,0,0.65)] ${className}`}
     >
-      {/* Status bar */}
+      {/* Status bar chrome */}
       <div className="flex items-center justify-between bg-zinc-950 px-4 py-2.5">
         <span className="text-[9px] font-semibold text-zinc-500">9:41</span>
         <div className="flex items-center gap-1.5">
@@ -307,9 +125,17 @@ function PhoneMockup({
         </div>
       </div>
 
-      {type === "tasks" && <TasksScreen />}
-      {type === "streak" && <StreakScreen />}
-      {type === "calendar" && <CalendarScreen />}
+      {/* Screenshot — fills width, shows top portion */}
+      <div className="relative overflow-hidden" style={{ height: imageHeight }}>
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover object-top"
+          sizes="(max-width: 640px) 145px, 220px"
+          priority={priority}
+        />
+      </div>
     </div>
   );
 }
@@ -410,17 +236,19 @@ export default function TodoPage() {
               </p>
             </div>
 
-            {/* Hero phone */}
+            {/* Hero phone — shows tasks screenshot */}
             <div className="shrink-0">
               <div className="relative">
-                {/* Glow behind the phone */}
                 <div
                   className="absolute inset-0 -z-10 scale-110 rounded-[40px] blur-3xl"
                   style={{ background: "rgba(99,102,241,0.12)" }}
                 />
                 <PhoneMockup
-                  type="tasks"
+                  src={screenshots.tasks}
+                  alt="Todo app — task list"
                   className="w-[195px] rotate-1 transition-transform hover:rotate-0 sm:w-[215px]"
+                  imageHeight={420}
+                  priority
                 />
               </div>
             </div>
@@ -439,7 +267,7 @@ export default function TodoPage() {
           </h2>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {/* Android card */}
+            {/* Android */}
             <div className="relative overflow-hidden rounded-2xl border border-zinc-700/50 bg-zinc-900/30 p-6 transition-all hover:border-zinc-600/60 hover:bg-zinc-900/50">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-500/35 to-transparent" />
               <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900">
@@ -465,7 +293,7 @@ export default function TodoPage() {
               </p>
             </div>
 
-            {/* iOS card */}
+            {/* iOS */}
             <div className="relative overflow-hidden rounded-2xl border border-zinc-700/50 bg-zinc-900/30 p-6 transition-all hover:border-zinc-600/60 hover:bg-zinc-900/50">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-500/35 to-transparent" />
               <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900">
@@ -501,13 +329,49 @@ export default function TodoPage() {
           <p className="mb-12 text-center text-xs font-semibold uppercase tracking-[0.15em] text-zinc-600">
             App Preview
           </p>
+
           <div className="flex items-end justify-center gap-5 sm:gap-8">
-            <div className="-translate-y-8">
-              <PhoneMockup type="tasks" className="w-[145px] sm:w-[162px]" />
+            {/* Tasks */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="-translate-y-8">
+                <PhoneMockup
+                  src={screenshots.tasks}
+                  alt="Todo app — task list"
+                  className="w-[145px] sm:w-[162px]"
+                  imageHeight={310}
+                />
+              </div>
+              <span className="text-xs font-medium text-zinc-600">
+                Tasks
+              </span>
             </div>
-            <PhoneMockup type="calendar" className="w-[145px] sm:w-[162px]" />
-            <div className="-translate-y-4 hidden sm:block">
-              <PhoneMockup type="streak" className="w-[145px] sm:w-[162px]" />
+
+            {/* Calendar */}
+            <div className="flex flex-col items-center gap-4">
+              <PhoneMockup
+                src={screenshots.calendar}
+                alt="Todo app — calendar view"
+                className="w-[145px] sm:w-[162px]"
+                imageHeight={310}
+              />
+              <span className="text-xs font-medium text-zinc-600">
+                Calendar
+              </span>
+            </div>
+
+            {/* Achievements — hidden on very small screens */}
+            <div className="hidden flex-col items-center gap-4 sm:flex">
+              <div className="-translate-y-4">
+                <PhoneMockup
+                  src={screenshots.achievements}
+                  alt="Todo app — achievements and streaks"
+                  className="w-[145px] sm:w-[162px]"
+                  imageHeight={310}
+                />
+              </div>
+              <span className="text-xs font-medium text-zinc-600">
+                Achievements
+              </span>
             </div>
           </div>
         </div>
@@ -601,7 +465,6 @@ export default function TodoPage() {
             </a>
           </div>
 
-          {/* APK metadata chip */}
           <div className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-xl border border-zinc-800/60 bg-zinc-900/30 px-5 py-3 text-xs text-zinc-600">
             <span>com.othmanlearn.todoproductivity</span>
             <span className="hidden text-zinc-800 sm:inline">·</span>
