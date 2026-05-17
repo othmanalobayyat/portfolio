@@ -125,24 +125,9 @@ export default function TodoPage() {
   return (
     <div className="min-h-screen bg-[#0F1117] font-sans">
 
-      {/* ── Top bar ── */}
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 pt-7">
-        <a
-          href="/"
-          className="inline-flex items-center gap-1.5 text-sm text-zinc-500 transition-colors hover:text-zinc-300"
-        >
-          <ArrowLeft className="h-3.5 w-3.5" />
-          Portfolio
-        </a>
-        <div className="inline-flex items-center gap-2 rounded-full border border-zinc-700/50 bg-[#13141F] px-3 py-1 text-xs text-zinc-400">
-          <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(52,211,153,0.7)]" />
-          v1.0.0
-        </div>
-      </div>
-
-      {/* ── Hero ── */}
-      <section className="relative overflow-hidden px-6 pb-10 pt-16 lg:pb-20 lg:pt-24">
-        {/* Background atmosphere */}
+      {/* ── Hero (nav lives here so the atmosphere covers the full top) ── */}
+      <section className="relative overflow-hidden px-6 pb-10 pt-6 lg:pb-20">
+        {/* Background atmosphere — starts at the very top of the page */}
         <div className="pointer-events-none absolute inset-0">
           {/* Dot grid */}
           <div
@@ -153,12 +138,12 @@ export default function TodoPage() {
               backgroundSize: "28px 28px",
             }}
           />
-          {/* Primary indigo glow from top */}
+          {/* Primary indigo glow — peaks at top, fans into hero */}
           <div
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 70% 55% at 50% -5%, rgba(99,102,241,0.18) 0%, transparent 65%)",
+                "radial-gradient(ellipse 70% 60% at 50% 0%, rgba(99,102,241,0.2) 0%, transparent 65%)",
             }}
           />
           {/* Soft radial behind left text column */}
@@ -166,11 +151,26 @@ export default function TodoPage() {
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 50% 40% at 25% 55%, rgba(99,102,241,0.05) 0%, transparent 70%)",
+                "radial-gradient(ellipse 50% 40% at 25% 65%, rgba(99,102,241,0.05) 0%, transparent 70%)",
             }}
           />
           {/* Bottom section fade */}
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0F1117] to-transparent" />
+        </div>
+
+        {/* Nav row — integrated into the hero, bathed in the same atmosphere */}
+        <div className="relative mx-auto mb-14 flex max-w-5xl items-center justify-between lg:mb-20">
+          <a
+            href="/"
+            className="inline-flex items-center gap-1.5 text-sm text-zinc-500 transition-colors hover:text-zinc-300"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            Portfolio
+          </a>
+          <div className="inline-flex items-center gap-2 rounded-full border border-zinc-700/50 bg-[#13141F]/80 px-3 py-1 text-xs text-zinc-400">
+            <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(52,211,153,0.7)]" />
+            v1.0.0
+          </div>
         </div>
 
         <div className="relative mx-auto max-w-5xl">
