@@ -106,25 +106,6 @@ function PhoneMockup({
     <div
       className={`overflow-hidden rounded-[30px] border border-zinc-700/50 bg-zinc-900 shadow-[0_24px_60px_rgba(0,0,0,0.65)] ${className}`}
     >
-      {/* Status bar chrome */}
-      <div className="flex items-center justify-between bg-zinc-950 px-4 py-2.5">
-        <span className="text-[9px] font-semibold text-zinc-500">9:41</span>
-        <div className="flex items-center gap-1.5">
-          <div className="flex items-end gap-0.5">
-            {[3, 4, 5, 4].map((h, i) => (
-              <div
-                key={i}
-                className="w-[2px] rounded-sm bg-zinc-600"
-                style={{ height: `${h}px` }}
-              />
-            ))}
-          </div>
-          <div className="flex h-2.5 w-4 items-center rounded-sm border border-zinc-600 px-px">
-            <div className="h-1.5 w-2.5 rounded-sm bg-zinc-500" />
-          </div>
-        </div>
-      </div>
-
       {/* Screenshot — fills width, shows top portion */}
       <div className="relative overflow-hidden" style={{ height: imageHeight }}>
         <Image
