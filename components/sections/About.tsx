@@ -7,7 +7,7 @@ const focusAreas = [
 export default function About() {
   return (
     <section id="about" className="mx-auto max-w-5xl px-6 py-24">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-600">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
         About
       </p>
       <h2 className="mb-8 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -38,10 +38,10 @@ export default function About() {
         {focusAreas.map(({ label, desc }) => (
           <div
             key={label}
-            className="rounded-xl border border-zinc-800/70 bg-zinc-900/30 p-4 transition-colors hover:border-zinc-700/60"
+            className="rounded-xl border border-zinc-700/40 bg-[#13141F] p-4 transition-all hover:border-zinc-600/50 hover:bg-[#161820]"
           >
-            <div className="mb-1 text-sm font-medium text-zinc-200">{label}</div>
-            <div className="text-xs text-zinc-600">{desc}</div>
+            <div className="mb-1 text-sm font-medium text-zinc-100">{label}</div>
+            <div className="text-xs text-zinc-500">{desc}</div>
           </div>
         ))}
       </div>

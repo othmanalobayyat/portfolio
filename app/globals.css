@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background-color: #09090b;
+  background-color: #0F1117;
   color: #fafafa;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,16 +23,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #0F1117;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #1E2030;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #2A2D3E;
 }
 
 @keyframes fade-up {

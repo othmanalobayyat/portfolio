@@ -21,7 +21,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "border-b border-zinc-800/70 bg-[#09090b]/85 backdrop-blur-xl"
+          ? "border-b border-zinc-700/40 bg-[#0F1117]/90 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -38,14 +38,14 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-zinc-500 transition-colors hover:text-zinc-200"
+              className="text-sm text-zinc-500 transition-colors hover:text-white"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="ml-1 rounded-lg border border-zinc-800 bg-zinc-900/50 px-3.5 py-1.5 text-sm font-medium text-zinc-300 transition-all hover:border-zinc-700 hover:bg-zinc-800/60 hover:text-white"
+            className="ml-1 rounded-lg border border-zinc-700/50 bg-[#13141F] px-3.5 py-1.5 text-sm font-medium text-zinc-300 transition-all hover:border-zinc-600/60 hover:bg-[#1A1B26] hover:text-white"
           >
             Hire me
           </a>

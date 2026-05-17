@@ -29,7 +29,7 @@ export default function Home() {
 function Divider() {
   return (
     <div className="mx-auto max-w-5xl px-6">
-      <div className="h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-zinc-700/50 to-transparent" />
     </div>
   );
 }

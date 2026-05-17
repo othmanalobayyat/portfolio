@@ -5,14 +5,14 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-zinc-800/40 px-6 py-7">
+    <footer className="border-t border-zinc-700/25 px-6 py-7">
       <div className="mx-auto flex max-w-5xl items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="text-sm font-medium text-zinc-400">
             Othman Alobayyat
           </span>
-          <span className="hidden text-zinc-800 sm:block">·</span>
-          <span className="hidden text-xs text-zinc-700 sm:block">
+          <span className="hidden text-zinc-700 sm:block">·</span>
+          <span className="hidden text-xs text-zinc-600 sm:block">
             Intelligent Systems Engineering
           </span>
         </div>
@@ -22,7 +22,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-zinc-700 transition-colors hover:text-zinc-400"
+            className="text-zinc-600 transition-colors hover:text-zinc-300"
           >
             <Github className="h-4 w-4" />
           </a>
@@ -31,11 +31,11 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-zinc-700 transition-colors hover:text-zinc-400"
+            className="text-zinc-600 transition-colors hover:text-zinc-300"
           >
             <Linkedin className="h-4 w-4" />
           </a>
-          <span className="text-xs text-zinc-700">© {year}</span>
+          <span className="text-xs text-zinc-600">© {year}</span>
         </div>
       </div>
     </footer>
