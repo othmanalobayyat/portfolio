@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowDown, Github, Mail } from "lucide-react";
+import { contact } from "@/data/portfolio";
 
 export default function Hero() {
   return (
@@ -83,7 +84,7 @@ export default function Hero() {
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
           <a
-            href="https://github.com/othmanalobayyat"
+            href={contact.github}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg border border-zinc-600/50 bg-zinc-800/40 px-5 py-2.5 text-sm font-medium text-zinc-200 transition-all hover:border-zinc-500/60 hover:bg-zinc-700/50 hover:text-white"

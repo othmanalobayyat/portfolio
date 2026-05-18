@@ -18,6 +18,8 @@ body {
   color: #fafafa;
 }
 
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -34,6 +36,16 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #2A2D3E;
 }
+
+/* ─── Focus visible ──────────────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.7);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Animations ────────────────────────────────────────────────────────────── */
 
 @keyframes fade-up {
   from {
@@ -54,4 +66,32 @@ body {
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Suppress Tailwind's built-in animate-bounce on the scroll arrow */
+  .animate-bounce {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

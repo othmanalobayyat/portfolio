@@ -1,8 +1,4 @@
-const focusAreas = [
-  { label: "Embedded Systems", desc: "Firmware & hardware protocols" },
-  { label: "IoT Architecture", desc: "Sensor networks & connectivity" },
-  { label: "Full-Stack Engineering", desc: "Backend APIs & web platforms" },
-];
+import { focusAreas } from "@/data/portfolio";
 
 export default function About() {
   return (
@@ -10,9 +6,8 @@ export default function About() {
       <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
         About
       </p>
-      <h2 className="mb-8 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-        Engineering where intelligence
-        <br className="hidden sm:block" /> meets systems
+      <h2 className="mb-8 max-w-xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Engineering where intelligence meets systems
       </h2>
       <div className="max-w-3xl space-y-5 text-[15px] leading-[1.8] text-zinc-400">
         <p>

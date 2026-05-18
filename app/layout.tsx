@@ -8,10 +8,16 @@ const inter = Inter({
   display: "swap",
 });
 
+const baseUrl = "https://www.othmanalobayyat.online";
+
 export const metadata: Metadata = {
-  title: "Othman Alobayyat — Intelligent Systems Engineering",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: "Othman Alobayyat — Intelligent Systems Engineering",
+    template: "%s — Othman Alobayyat",
+  },
   description:
-    "Personal portfolio of Othman Alobayyat — Intelligent Systems Engineering student building intelligent real-world systems using software, embedded systems, and modern technologies.",
+    "Portfolio of Othman Alobayyat — Intelligent Systems Engineering student building real-world systems across embedded hardware, IoT, and full-stack software.",
   keywords: [
     "Othman Alobayyat",
     "Intelligent Systems Engineering",
@@ -19,7 +25,29 @@ export const metadata: Metadata = {
     "IoT",
     "portfolio",
     "software engineer",
+    "React",
+    "ESP32",
   ],
+  authors: [{ name: "Othman Alobayyat" }],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: baseUrl,
+    siteName: "Othman Alobayyat",
+    title: "Othman Alobayyat — Intelligent Systems Engineering",
+    description:
+      "Building real-world systems across embedded hardware, IoT, and full-stack software.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Othman Alobayyat — Intelligent Systems Engineering",
+    description:
+      "Building real-world systems across embedded hardware, IoT, and full-stack software.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

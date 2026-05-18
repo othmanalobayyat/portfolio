@@ -1,4 +1,4 @@
-import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
+import { Github, ExternalLink, ArrowUpRight, Lock } from "lucide-react";
 import { projects } from "@/data/portfolio";
 
 export default function Projects() {
@@ -48,21 +48,37 @@ export default function Projects() {
               {/* Actions row */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <a
-                    href={project.github}
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 transition-colors hover:text-zinc-200"
-                  >
-                    <Github className="h-3.5 w-3.5" />
-                    GitHub
-                  </a>
-                  <span className="text-zinc-700">·</span>
-                  <a
-                    href={project.demo}
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 transition-colors hover:text-zinc-200"
-                  >
-                    <ExternalLink className="h-3.5 w-3.5" />
-                    Demo
-                  </a>
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 transition-colors hover:text-zinc-200"
+                    >
+                      <Github className="h-3.5 w-3.5" />
+                      GitHub
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-700">
+                      <Lock className="h-3 w-3" />
+                      Private
+                    </span>
+                  )}
+
+                  {project.demo && (
+                    <>
+                      <span className="text-zinc-700">·</span>
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 transition-colors hover:text-zinc-200"
+                      >
+                        <ExternalLink className="h-3.5 w-3.5" />
+                        Demo
+                      </a>
+                    </>
+                  )}
                 </div>
                 <ArrowUpRight className="h-4 w-4 text-zinc-700 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-400" />
               </div>

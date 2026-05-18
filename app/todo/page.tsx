@@ -38,6 +38,12 @@ export const metadata: Metadata = {
       "Plan tasks, set deadlines, and stay on top of everything — beautifully.",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Todo Productivity App — Get Things Done, Your Way",
+    description:
+      "Plan tasks, set deadlines, and stay on top of everything — beautifully.",
+  },
 };
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -123,11 +129,11 @@ function PhoneMockup({
 export default function TodoPage() {
   return (
     <div className="min-h-screen bg-[#0F1117] font-sans">
-      {/* ── Hero (nav lives here so the atmosphere covers the full top) ── */}
-      <section className="relative overflow-hidden px-6 pb-10 pt-6 lg:pb-20">
-        {/* Background atmosphere — starts at the very top of the page */}
+
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden px-6 pb-16 pt-7 lg:pb-24 lg:pt-8">
+        {/* Background atmosphere */}
         <div className="pointer-events-none absolute inset-0">
-          {/* Dot grid */}
           <div
             className="absolute inset-0"
             style={{
@@ -136,7 +142,6 @@ export default function TodoPage() {
               backgroundSize: "28px 28px",
             }}
           />
-          {/* Primary indigo glow — peaks at top, fans into hero */}
           <div
             className="absolute inset-0"
             style={{
@@ -144,7 +149,6 @@ export default function TodoPage() {
                 "radial-gradient(ellipse 70% 60% at 50% 0%, rgba(99,102,241,0.2) 0%, transparent 65%)",
             }}
           />
-          {/* Soft radial behind left text column */}
           <div
             className="absolute inset-0"
             style={{
@@ -152,26 +156,32 @@ export default function TodoPage() {
                 "radial-gradient(ellipse 50% 40% at 25% 65%, rgba(99,102,241,0.05) 0%, transparent 70%)",
             }}
           />
-          {/* Bottom section fade */}
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0F1117] to-transparent" />
         </div>
 
         {/* Nav row */}
-        <div className="relative mx-auto mb-14 flex max-w-5xl items-center justify-between lg:mb-20">
-          <span className="text-sm text-zinc-600">
-            Built by Othman Alobayyat
-          </span>
+        <div className="relative mx-auto mb-16 flex max-w-5xl items-center justify-between lg:mb-20">
+          <a
+            href="/"
+            className="group inline-flex items-center gap-1.5 text-sm text-zinc-600 transition-colors duration-200 hover:text-zinc-300"
+          >
+            <span className="inline-block transition-transform duration-200 group-hover:-translate-x-0.5">
+              ←
+            </span>
+            Othman Alobayyat
+          </a>
           <div className="inline-flex items-center gap-2 rounded-full border border-zinc-700/50 bg-[#13141F]/80 px-3 py-1 text-xs text-zinc-400">
             <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(52,211,153,0.7)]" />
             v1.0.2
           </div>
         </div>
 
+        {/* Hero content */}
         <div className="relative mx-auto max-w-5xl">
-          <div className="flex flex-col items-center gap-14 lg:flex-row lg:items-center lg:gap-12">
+          <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
             {/* Text */}
             <div className="flex-1 text-center lg:text-left">
-              {/* Gradient border badge */}
+              {/* Badge */}
               <div className="mb-6 inline-flex">
                 <div className="rounded-full bg-gradient-to-r from-indigo-500/25 via-zinc-700/40 to-violet-500/25 p-px">
                   <div className="flex items-center gap-2 rounded-full bg-[#0F1117] px-4 py-1.5">
@@ -183,14 +193,14 @@ export default function TodoPage() {
                 </div>
               </div>
 
-              <h1 className="mb-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <h1 className="mb-5 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.75rem]">
                 Get things done,{" "}
                 <span className="bg-gradient-to-br from-zinc-100 via-indigo-300 to-violet-400 bg-clip-text text-transparent">
                   your way.
                 </span>
               </h1>
 
-              <p className="mx-auto mb-8 max-w-md text-[15px] leading-relaxed text-zinc-400 lg:mx-0">
+              <p className="mx-auto mb-9 max-w-md text-[15px] leading-[1.7] text-zinc-400 lg:mx-0">
                 Plan tasks, set deadlines, and stay on top of everything —
                 beautifully.
               </p>
@@ -199,16 +209,16 @@ export default function TodoPage() {
                 <a
                   href={APK_URL}
                   download="todo.apk"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black transition-all hover:bg-zinc-100 hover:shadow-[0_4px_24px_rgba(255,255,255,0.12)] active:scale-[0.98]"
+                  className="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-[11px] text-sm font-semibold text-black transition-all duration-200 hover:bg-zinc-100 hover:shadow-[0_4px_28px_rgba(255,255,255,0.14)] active:scale-[0.98]"
                 >
-                  <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+                  <Download className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
                   Download for Android
                 </a>
                 <a
                   href={WEB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-zinc-600/50 bg-zinc-800/40 px-5 py-3 text-sm font-medium text-zinc-300 transition-all hover:border-zinc-500/60 hover:bg-zinc-700/50 hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-xl border border-zinc-600/50 bg-zinc-800/40 px-5 py-[11px] text-sm font-medium text-zinc-300 transition-all duration-200 hover:border-zinc-500/60 hover:bg-zinc-700/50 hover:text-white"
                 >
                   <Globe className="h-4 w-4" />
                   Try Web Version
@@ -216,7 +226,7 @@ export default function TodoPage() {
                 </a>
               </div>
 
-              <p className="mt-4 text-xs text-zinc-600">
+              <p className="mt-4 text-[11px] tracking-wide text-zinc-600">
                 Android APK · iPhone Web App
               </p>
             </div>
@@ -231,7 +241,7 @@ export default function TodoPage() {
                 <PhoneMockup
                   src={screenshots.tasks}
                   alt="Todo app — task list"
-                  className="w-[195px] rotate-1 transition-transform hover:rotate-0 sm:w-[215px]"
+                  className="w-[195px] rotate-1 transition-all duration-500 hover:rotate-0 hover:scale-[1.02] hover:shadow-[0_32px_80px_rgba(0,0,0,0.7)] sm:w-[215px]"
                   imageHeight={420}
                   priority
                 />
@@ -242,9 +252,9 @@ export default function TodoPage() {
       </section>
 
       {/* ── Platform Selector ── */}
-      <section className="px-6 pb-24">
+      <section className="px-6 pb-20">
         <div className="mx-auto max-w-2xl">
-          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+          <p className="mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
             Available On
           </p>
           <h2 className="mb-10 text-center text-2xl font-bold tracking-tight text-white sm:text-3xl">
@@ -253,7 +263,7 @@ export default function TodoPage() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             {/* Android */}
-            <div className="relative overflow-hidden rounded-2xl border border-zinc-700/40 bg-[#13141F] p-6 transition-all hover:border-zinc-600/50 hover:bg-[#161820]">
+            <div className="group relative overflow-hidden rounded-2xl border border-zinc-700/40 bg-[#13141F] p-6 transition-all duration-200 hover:border-zinc-600/50 hover:bg-[#161820] hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
               <div
                 className="pointer-events-none absolute inset-0 rounded-2xl"
@@ -263,10 +273,10 @@ export default function TodoPage() {
                 }}
               />
               <div className="relative">
-                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-700/50 bg-[#0F1117]">
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-700/50 bg-[#0F1117] transition-colors duration-200 group-hover:border-emerald-900/60 group-hover:bg-emerald-950/30">
                   <Smartphone className="h-5 w-5 text-emerald-400" />
                 </div>
-                <p className="mb-0.5 text-base font-semibold text-white">
+                <p className="mb-1 text-[15px] font-semibold text-white">
                   Android
                 </p>
                 <p className="mb-5 text-sm leading-relaxed text-zinc-400">
@@ -276,9 +286,9 @@ export default function TodoPage() {
                 <a
                   href={APK_URL}
                   download="todo.apk"
-                  className="group flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black transition-all hover:bg-emerald-400 hover:shadow-[0_4px_20px_rgba(52,211,153,0.3)] active:scale-[0.98]"
+                  className="group/btn flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-emerald-400 hover:shadow-[0_4px_20px_rgba(52,211,153,0.3)] active:scale-[0.98]"
                 >
-                  <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+                  <Download className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-y-0.5" />
                   Download APK
                 </a>
                 <p className="mt-3 text-center text-xs text-zinc-600">
@@ -288,7 +298,7 @@ export default function TodoPage() {
             </div>
 
             {/* iOS */}
-            <div className="relative overflow-hidden rounded-2xl border border-zinc-700/40 bg-[#13141F] p-6 transition-all hover:border-zinc-600/50 hover:bg-[#161820]">
+            <div className="group relative overflow-hidden rounded-2xl border border-zinc-700/40 bg-[#13141F] p-6 transition-all duration-200 hover:border-zinc-600/50 hover:bg-[#161820] hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-500/40 to-transparent" />
               <div
                 className="pointer-events-none absolute inset-0 rounded-2xl"
@@ -298,10 +308,10 @@ export default function TodoPage() {
                 }}
               />
               <div className="relative">
-                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-700/50 bg-[#0F1117]">
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-700/50 bg-[#0F1117] transition-colors duration-200 group-hover:border-sky-900/60 group-hover:bg-sky-950/30">
                   <Globe className="h-5 w-5 text-sky-400" />
                 </div>
-                <p className="mb-0.5 text-base font-semibold text-white">
+                <p className="mb-1 text-[15px] font-semibold text-white">
                   iPhone / iOS
                 </p>
                 <p className="mb-5 text-sm leading-relaxed text-zinc-400">
@@ -312,7 +322,7 @@ export default function TodoPage() {
                   href={WEB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl border border-zinc-600/50 bg-zinc-800/40 px-5 py-2.5 text-sm font-semibold text-zinc-200 transition-all hover:border-zinc-500/60 hover:bg-zinc-700/50 hover:text-white"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-zinc-600/50 bg-zinc-800/40 px-5 py-2.5 text-sm font-semibold text-zinc-200 transition-all duration-200 hover:border-zinc-500/60 hover:bg-zinc-700/50 hover:text-white"
                 >
                   <ExternalLink className="h-4 w-4" />
                   Open Web Version
@@ -327,8 +337,7 @@ export default function TodoPage() {
       </section>
 
       {/* ── App Preview ── */}
-      <section className="relative overflow-hidden px-6 pb-28">
-        {/* Ambient purple glow behind phones */}
+      <section className="relative overflow-hidden px-6 pb-24">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -337,26 +346,29 @@ export default function TodoPage() {
           }}
         />
         <div className="relative mx-auto max-w-5xl">
-          <p className="mb-12 text-center text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+          <p className="mb-12 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
             App Preview
           </p>
 
-          <div className="flex items-end justify-center gap-5 sm:gap-8">
-            {/* Tasks */}
+          {/*
+            Staggered phone heights via mt-N on each column + items-start.
+            Tasks (mt-0) appears highest, Calendar (mt-8) is the baseline,
+            Achievements (mt-4) sits between them. No translate hacks.
+          */}
+          <div className="flex items-start justify-center gap-5 sm:gap-8">
+            {/* Tasks — highest */}
             <div className="flex flex-col items-center gap-4">
-              <div className="-translate-y-8">
-                <PhoneMockup
-                  src={screenshots.tasks}
-                  alt="Todo app — task list"
-                  className="w-[145px] sm:w-[162px]"
-                  imageHeight={310}
-                />
-              </div>
+              <PhoneMockup
+                src={screenshots.tasks}
+                alt="Todo app — task list"
+                className="w-[145px] sm:w-[162px]"
+                imageHeight={310}
+              />
               <span className="text-xs font-medium text-zinc-500">Tasks</span>
             </div>
 
-            {/* Calendar */}
-            <div className="flex flex-col items-center gap-4">
+            {/* Calendar — lowest (baseline) */}
+            <div className="mt-8 flex flex-col items-center gap-4">
               <PhoneMockup
                 src={screenshots.calendar}
                 alt="Todo app — calendar view"
@@ -368,16 +380,14 @@ export default function TodoPage() {
               </span>
             </div>
 
-            {/* Achievements — hidden on very small screens */}
-            <div className="hidden flex-col items-center gap-4 sm:flex">
-              <div className="-translate-y-4">
-                <PhoneMockup
-                  src={screenshots.achievements}
-                  alt="Todo app — achievements and streaks"
-                  className="w-[145px] sm:w-[162px]"
-                  imageHeight={310}
-                />
-              </div>
+            {/* Achievements — mid height, hidden on xs */}
+            <div className="mt-4 hidden flex-col items-center gap-4 sm:flex">
+              <PhoneMockup
+                src={screenshots.achievements}
+                alt="Todo app — achievements and streaks"
+                className="w-[145px] sm:w-[162px]"
+                imageHeight={310}
+              />
               <span className="text-xs font-medium text-zinc-500">
                 Achievements
               </span>
@@ -387,9 +397,9 @@ export default function TodoPage() {
       </section>
 
       {/* ── Features ── */}
-      <section className="px-6 pb-28">
+      <section className="px-6 pb-24">
         <div className="mx-auto max-w-5xl">
-          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+          <p className="mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
             Features
           </p>
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -403,15 +413,17 @@ export default function TodoPage() {
             {features.map(({ icon: Icon, label, desc }) => (
               <div
                 key={label}
-                className="group rounded-xl border border-zinc-700/40 bg-[#13141F] p-5 transition-all hover:border-zinc-600/50 hover:bg-[#161820]"
+                className="group rounded-xl border border-zinc-700/40 bg-[#13141F] p-5 transition-all duration-200 hover:border-zinc-600/50 hover:bg-[#161820] hover:shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
               >
-                <div className="mb-3.5 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-700/50 bg-[#0F1117] transition-colors group-hover:border-zinc-600/50 group-hover:bg-[#13141F]">
-                  <Icon className="h-4 w-4 text-zinc-400 transition-colors group-hover:text-indigo-400" />
+                <div className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-700/50 bg-[#0F1117] transition-colors duration-200 group-hover:border-indigo-900/60 group-hover:bg-indigo-950/40">
+                  <Icon className="h-4 w-4 text-zinc-400 transition-colors duration-200 group-hover:text-indigo-400" />
                 </div>
-                <p className="mb-1.5 text-sm font-semibold text-zinc-50">
+                <p className="mb-1.5 text-sm font-semibold leading-snug text-zinc-50">
                   {label}
                 </p>
-                <p className="text-xs leading-relaxed text-zinc-500">{desc}</p>
+                <p className="text-[13px] leading-relaxed text-zinc-500">
+                  {desc}
+                </p>
               </div>
             ))}
           </div>
@@ -419,16 +431,16 @@ export default function TodoPage() {
       </section>
 
       {/* ── Tech Stack ── */}
-      <section className="px-6 pb-28">
+      <section className="px-6 pb-24">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+          <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
             Built with
           </p>
           <div className="flex flex-wrap items-center justify-center gap-2.5">
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="rounded-lg border border-zinc-700/40 bg-[#13141F] px-3.5 py-2 text-xs font-medium text-zinc-400"
+                className="rounded-lg border border-zinc-700/40 bg-[#13141F] px-3.5 py-2 text-xs font-medium text-zinc-400 transition-colors duration-150 hover:border-zinc-600/50 hover:text-zinc-300"
               >
                 {tech}
               </span>
@@ -438,7 +450,7 @@ export default function TodoPage() {
       </section>
 
       {/* ── Bottom CTA ── */}
-      <section className="relative px-6 pb-32">
+      <section className="relative px-6 pb-28">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -458,16 +470,16 @@ export default function TodoPage() {
             <a
               href={APK_URL}
               download="todo.apk"
-              className="group inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-zinc-100 hover:shadow-[0_4px_24px_rgba(255,255,255,0.12)] active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 rounded-xl bg-white px-6 py-[11px] text-sm font-semibold text-black transition-all duration-200 hover:bg-zinc-100 hover:shadow-[0_4px_28px_rgba(255,255,255,0.14)] active:scale-[0.98]"
             >
-              <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+              <Download className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
               Download APK
             </a>
             <a
               href={WEB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-zinc-600/50 bg-zinc-800/40 px-6 py-3 text-sm font-medium text-zinc-300 transition-all hover:border-zinc-500/60 hover:bg-zinc-700/50 hover:text-white"
+              className="inline-flex items-center gap-2 rounded-xl border border-zinc-600/50 bg-zinc-800/40 px-6 py-[11px] text-sm font-medium text-zinc-300 transition-all duration-200 hover:border-zinc-500/60 hover:bg-zinc-700/50 hover:text-white"
             >
               <Globe className="h-4 w-4" />
               Try Web Version
@@ -485,8 +497,8 @@ export default function TodoPage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-zinc-700/25 px-6 py-7">
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
+      <footer className="border-t border-zinc-700/25 px-6 py-6">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 text-center sm:flex-row sm:justify-between sm:text-left">
           <div className="flex items-center gap-3">
             <span className="text-sm font-medium text-zinc-400">
               Todo Productivity App
