@@ -9,7 +9,6 @@ export default function Hero() {
     >
       {/* Background atmosphere */}
       <div className="pointer-events-none absolute inset-0">
-        {/* Dot grid */}
         <div
           className="absolute inset-0"
           style={{
@@ -18,7 +17,6 @@ export default function Hero() {
             backgroundSize: "28px 28px",
           }}
         />
-        {/* Primary glow — top center */}
         <div
           className="absolute inset-0"
           style={{
@@ -26,7 +24,6 @@ export default function Hero() {
               "radial-gradient(ellipse 65% 55% at 50% -5%, rgba(99,102,241,0.18) 0%, transparent 65%)",
           }}
         />
-        {/* Secondary glow — offset right */}
         <div
           className="absolute inset-0"
           style={{
@@ -34,7 +31,6 @@ export default function Hero() {
               "radial-gradient(ellipse 45% 35% at 85% 15%, rgba(139,92,246,0.07) 0%, transparent 60%)",
           }}
         />
-        {/* Soft centered glow behind headline */}
         <div
           className="absolute inset-0"
           style={{
@@ -42,19 +38,18 @@ export default function Hero() {
               "radial-gradient(ellipse 55% 40% at 50% 48%, rgba(99,102,241,0.05) 0%, transparent 70%)",
           }}
         />
-        {/* Bottom fade */}
         <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#0F1117] via-[#0F1117]/60 to-transparent" />
       </div>
 
       {/* Main content */}
       <div className="relative z-10 mx-auto w-full max-w-4xl px-6 text-center">
-        {/* Badge with gradient border */}
+        {/* Badge */}
         <div className="animate-fade-up mb-8 inline-flex">
           <div className="rounded-full bg-gradient-to-r from-indigo-500/25 via-zinc-700/40 to-violet-500/25 p-px">
             <div className="flex items-center gap-2.5 rounded-full bg-[#0F1117] px-4 py-1.5">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.7)]" />
               <span className="text-sm text-zinc-400">
-                Intelligent Systems Engineering
+                Intelligent Systems Engineer · Product Engineering
               </span>
             </div>
           </div>
@@ -69,9 +64,9 @@ export default function Hero() {
         </h1>
 
         {/* Tagline */}
-        <p className="animate-fade-up delay-200 mx-auto mb-10 max-w-lg text-base text-zinc-400 sm:text-lg sm:leading-relaxed">
-          Building intelligent real-world systems using software, embedded
-          systems, and modern technologies.
+        <p className="animate-fade-up delay-200 mx-auto mb-10 max-w-xl text-base text-zinc-400 sm:text-lg sm:leading-relaxed">
+          Engineering intelligent systems across embedded devices, software, and
+          AI-powered products.
         </p>
 
         {/* CTA buttons */}

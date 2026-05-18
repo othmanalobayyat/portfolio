@@ -8,6 +8,10 @@ export interface Project {
   github: string | null;
   /** null = no live demo yet */
   demo: string | null;
+  /** Spans full grid width and renders architecture highlights */
+  featured?: boolean;
+  /** Scannable architecture/engineering signal chips, shown on featured cards */
+  highlights?: string[];
 }
 
 export interface FocusArea {
@@ -25,33 +29,43 @@ export interface Contact {
 
 export const projects: Project[] = [
   {
-    title: "Posturic",
+    title: "Todo Productivity App",
     description:
-      "A smart posture monitoring system that uses computer vision and embedded sensors to detect and correct poor posture in real time, providing users with clear, actionable feedback.",
+      "Offline-first mobile productivity app for Android and web — task writes queue locally and sync on reconnection, keeping the app fully functional without a network. Built on a Node.js/Supabase backend with JWT auth, email-based password reset, and cross-session state persistence.",
+    tech: ["React Native", "Expo", "Node.js", "PostgreSQL", "Supabase", "JWT", "Resend"],
+    github: null,
+    demo: "/todo",
+    featured: true,
+    highlights: [
+      "Offline-first sync with durable write queue",
+      "JWT auth + email password reset flow",
+      "Android APK · iOS web app",
+    ],
+  },
+  {
+    title: "Posturic",
+    description: "Technical write-up in progress — computer vision + embedded sensor fusion pipeline.",
     tech: ["Python", "OpenCV", "ESP32", "React", "FastAPI"],
     github: null,
     demo: null,
   },
   {
     title: "CliniQ",
-    description:
-      "A clinic management platform streamlining patient appointments, medical records, and doctor workflows — designed for both patients and medical staff with a clean, intuitive interface.",
+    description: "Technical write-up in progress — full-stack clinic management with role-based access.",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Node.js", "Tailwind CSS"],
     github: null,
     demo: null,
   },
   {
     title: "Sa'y",
-    description:
-      "A platform connecting job seekers with local employment opportunities, enabling users to discover, apply to, and track job applications within their community.",
+    description: "Technical write-up in progress — job-matching platform for local employment.",
     tech: ["React", "Node.js", "MongoDB", "Express", "TypeScript"],
     github: null,
     demo: null,
   },
   {
     title: "Car Accident Detection System",
-    description:
-      "An IoT system that detects vehicle collisions using accelerometer data and GPS, automatically notifying emergency contacts with the vehicle's real-time location.",
+    description: "Technical write-up in progress — embedded collision detection and GPS alert system.",
     tech: ["Arduino", "ESP32", "C++", "MQTT", "GPS Module"],
     github: null,
     demo: null,
@@ -59,9 +73,18 @@ export const projects: Project[] = [
 ];
 
 export const focusAreas: FocusArea[] = [
-  { label: "Embedded Systems", desc: "Firmware & hardware protocols" },
-  { label: "IoT Architecture", desc: "Sensor networks & connectivity" },
-  { label: "Full-Stack Engineering", desc: "Backend APIs & web platforms" },
+  {
+    label: "Embedded & IoT",
+    desc: "Firmware, sensor integration & hardware-software interfaces",
+  },
+  {
+    label: "Backend Engineering",
+    desc: "APIs, data pipelines & system architecture",
+  },
+  {
+    label: "Applied AI",
+    desc: "Computer vision & intelligent system design",
+  },
 ];
 
 export const skills: Record<string, string[]> = {
