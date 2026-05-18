@@ -163,7 +163,7 @@ export default function TodoPage() {
           </span>
           <div className="inline-flex items-center gap-2 rounded-full border border-zinc-700/50 bg-[#13141F]/80 px-3 py-1 text-xs text-zinc-400">
             <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(52,211,153,0.7)]" />
-            v1.0.1
+            v1.0.2
           </div>
         </div>
 
@@ -282,7 +282,7 @@ export default function TodoPage() {
                   Download APK
                 </a>
                 <p className="mt-3 text-center text-xs text-zinc-600">
-                  v1.0.1 · Android 8.0+ · ~12 MB
+                  v1.0.2 · Android 8.0+ · ~12 MB
                 </p>
               </div>
             </div>
@@ -477,7 +477,7 @@ export default function TodoPage() {
           <div className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-xl border border-zinc-700/40 bg-[#13141F] px-5 py-3 text-xs text-zinc-500">
             <span>com.othmanlearn.todoproductivity</span>
             <span className="hidden text-zinc-700 sm:inline">·</span>
-            <span>v1.0.1</span>
+            <span>v1.0.2</span>
             <span className="hidden text-zinc-700 sm:inline">·</span>
             <span>Android 8.0+</span>
           </div>
